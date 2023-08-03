@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+
+    <% if(existing_msg){    %>
+         
+      <h1 style="color: rgb(44, 230, 233); text-align: center;"><%=existing_msg    %> !!! </h1>
+
+      <h2 style="color: rgb(6, 144, 47); text-align: center;">Welcome To Login Page Dear <%=existing_name   %> !!! </h2>
+     <%  } else if(signup_success)  { %> 
+
+      <h1 style="color: rgb(44, 230, 233); text-align: center;"><%=signup_success    %> !!! </h1>
+
+      <h2 style="color: rgb(6, 144, 47); text-align: center;">Welcome To Login Page Dear <%=saved_name   %> !!! </h2>
+
+      <% } else if(pwd_incorrect){ %>
+
+        <h1 style="color: rgb(44, 230, 233); text-align: center;"><%=pwd_incorrect   %> !!! </h1>
+
+        <h2 style="color: rgb(6, 144, 47); text-align: center;"> Dear <%=pwd_incorrect_usr_name   %> Try with Correct Password!!! !!! </h2>
+
+        <% } %>
+
+    <h1 style="color: rgb(233, 44, 44); text-align: center;">Welcome To Login Page !!! </h1>
+
+    <form  action="/login"  method="post"  style="margin-left: 270px; background-color: blanchedalmond; width: 450px;">
+
+       
+        <div class="mb-3 col-sm-10">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" name="usr_email">
+         
+        </div>
+        <div class="mb-3 col-sm-10">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1"  name="usr_pwd">
+        </div>
+       
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+</body>
+</html>
